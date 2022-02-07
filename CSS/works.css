@@ -1,0 +1,654 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kanit:wght@200;300;400;500&family=Montserrat:ital,wght@0,500;0,600;1,400&family=Nunito:wght@400;600;700;800&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #ffffff;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h2,
+h5,
+h4 {
+  font-family: "Nunito", sans-serif;
+}
+
+h3 {
+  font-family: "Fredoka One", cursive;
+}
+
+p {
+  font-family: "Kanit", sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  background-color: #000000;
+  color: #cccccc;
+}
+
+header nav {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: flex-start;
+  transition: 0.5s ease-out;
+  z-index: 4;
+}
+header nav .logo-area {
+  z-index: 6;
+}
+header nav .logo-area a {
+  text-decoration: none;
+}
+header nav .logo-area a img {
+  width: 45px;
+  height: 45px;
+  padding: 15px 0px 15px 0px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+header nav .logo-area a h1 {
+  font-size: 30px;
+  width: 300px;
+  padding: 20px 15px 20px 80px;
+  display: none;
+}
+header nav #day, header nav #night {
+  padding: 25px 0px 25px 0px;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  right: 100px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+header nav #night {
+  right: 70px;
+}
+header nav #night .fa-moon {
+  color: #000000;
+}
+header nav #bar-btn, header nav #close-btn {
+  padding: 15px;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  right: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+header nav #bar-btn.active, header nav .active#close-btn {
+  display: none;
+}
+header nav #close-btn {
+  display: none;
+}
+header nav #close-btn.active {
+  display: block;
+}
+header nav #menu-container {
+  width: 100%;
+  padding: 10px 0px 10px 8px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #000000;
+  transition: 0.5s ease-in-out;
+  transform: translateY(-1500PX);
+  z-index: 2;
+}
+header nav #menu-container ul {
+  height: 1000px;
+}
+header nav #menu-container ul li {
+  cursor: pointer;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+header nav #menu-container ul li a {
+  text-align: center;
+  font-size: 50px;
+  text-decoration: none;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  height: 65px;
+  line-height: 16px;
+  padding: 65px 0px 65px 0px;
+  transition: 0.5s ease-in;
+}
+header nav #menu-container ul li .box-bg {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: inherit;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 9px;
+  transform: translateX(100%);
+  transition: 0.5s ease-in;
+}
+header nav #menu-container ul li:first-child {
+  border-top: none;
+}
+header nav #menu-container ul li:hover h2 {
+  color: #000000;
+}
+header nav #menu-container ul li:hover .box-bg {
+  transform: translateX(0);
+}
+header nav #menu-container.active {
+  transform: translatey(70px);
+}
+
+#Graphic {
+  position: relative;
+  top: 150px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+}
+#Graphic h5 {
+  padding: 35pX 10% 15px 10%;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#Graphic .graphic-container {
+  padding: 15PX 40px 40PX 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  box-sizing: border-box;
+}
+#Graphic .graphic-container .card, #Graphic .graphic-container .item-F, #Graphic .graphic-container .item-E, #Graphic .graphic-container .item-D, #Graphic .graphic-container .item-C, #Graphic .graphic-container .item-B, #Graphic .graphic-container .item-A {
+  border: 1px solid #4e4e4e;
+  height: 28vh;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  transition: 1s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+#Graphic .graphic-container .card img, #Graphic .graphic-container .item-F img, #Graphic .graphic-container .item-E img, #Graphic .graphic-container .item-D img, #Graphic .graphic-container .item-C img, #Graphic .graphic-container .item-B img, #Graphic .graphic-container .item-A img {
+  width: 50%;
+  height: 28vh;
+}
+#Graphic .graphic-container .card h4, #Graphic .graphic-container .item-F h4, #Graphic .graphic-container .item-E h4, #Graphic .graphic-container .item-D h4, #Graphic .graphic-container .item-C h4, #Graphic .graphic-container .item-B h4, #Graphic .graphic-container .item-A h4 {
+  width: 45%;
+  z-index: 1;
+  font-size: 20px;
+  position: absolute;
+  left: 53%;
+  top: 40px;
+  transform: translateY(0px);
+  text-align: center;
+}
+#Graphic .graphic-container .card #Co-button, #Graphic .graphic-container .item-F #Co-button, #Graphic .graphic-container .item-E #Co-button, #Graphic .graphic-container .item-D #Co-button, #Graphic .graphic-container .item-C #Co-button, #Graphic .graphic-container .item-B #Co-button, #Graphic .graphic-container .item-A #Co-button {
+  width: 80px;
+  height: 30px;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-radius: 5px;
+  position: absolute;
+  left: 65%;
+  transform: translateY(100px);
+  cursor: pointer;
+}
+#Graphic .graphic-container .card #Co-button:hover, #Graphic .graphic-container .item-F #Co-button:hover, #Graphic .graphic-container .item-E #Co-button:hover, #Graphic .graphic-container .item-D #Co-button:hover, #Graphic .graphic-container .item-C #Co-button:hover, #Graphic .graphic-container .item-B #Co-button:hover, #Graphic .graphic-container .item-A #Co-button:hover {
+  transition: 0.5s ease-in;
+  color: black;
+  background-color: white;
+}
+#Graphic .graphic-container .card #Co-button:hover p, #Graphic .graphic-container .item-F #Co-button:hover p, #Graphic .graphic-container .item-E #Co-button:hover p, #Graphic .graphic-container .item-D #Co-button:hover p, #Graphic .graphic-container .item-C #Co-button:hover p, #Graphic .graphic-container .item-B #Co-button:hover p, #Graphic .graphic-container .item-A #Co-button:hover p {
+  color: black;
+}
+#Graphic .graphic-container .item-B p {
+  transform: translateY(-130px);
+}
+#Graphic .graphic-container .item-C p {
+  transform: translateY(-130px);
+}
+#Graphic .graphic-container .item-D p {
+  transform: translateY(-130px);
+}
+#Graphic .graphic-container .item-E p {
+  transform: translateY(-130px);
+}
+#Graphic .graphic-container .item-F p {
+  transform: translateY(-130px);
+}
+
+#animation {
+  transform: translateY(200px);
+}
+#animation h5 {
+  padding: 35pX 10% 15px 10%;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transform: translateY(0px);
+}
+#animation .box-1, #animation .box-2 {
+  padding: 10px 10% 10px 10%;
+}
+#animation .box-1 iframe, #animation .box-2 iframe {
+  box-sizing: border-box;
+  border: 1px solid #555555;
+  width: 100%;
+  height: 200px;
+}
+#phto {
+  transform: translateY(200px);
+  width: 100%;
+  padding: 100px 10% 0px 10%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "item-1" "item-2" "item-3" "item-4";
+  height: 500px;
+  grid-gap: 20px;
+  box-sizing: border-box;
+}
+#phto h5 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transform: translateY(0px);
+}
+#phto .card, #phto #Graphic .graphic-container .item-A, #Graphic .graphic-container #phto .item-A, #phto #Graphic .graphic-container .item-B, #Graphic .graphic-container #phto .item-B, #phto #Graphic .graphic-container .item-C, #Graphic .graphic-container #phto .item-C, #phto #Graphic .graphic-container .item-D, #Graphic .graphic-container #phto .item-D, #phto #Graphic .graphic-container .item-E, #Graphic .graphic-container #phto .item-E, #phto #Graphic .graphic-container .item-F, #Graphic .graphic-container #phto .item-F {
+  box-sizing: border-box;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#phto .item-1 {
+  background-image: url(/Images/DP01.JPG);
+  background-size: cover;
+  height: 200px;
+}
+#phto .item-2 {
+  background-image: url(/Images/DP02.JPG);
+  background-size: cover;
+  height: 200px;
+}
+#phto .item-3,
+#phto .item-4 {
+  display: none;
+}
+
+#script {
+  transform: translateY(380px);
+  padding: 100px 10% 0px 10%;
+}
+#script h5 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transform: translateY(-80px);
+}
+#script h4 {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 110px;
+  padding-bottom: 10px;
+}
+#script p {
+  padding: 20px;
+  padding-top: 0px;
+}
+#script .boxs {
+  box-sizing: border-box;
+  border: 10px solid gerey;
+  width: 100%;
+  height: 280px;
+  background-image: url(/Images/Screen.jpg);
+  background-size: cover;
+  background-position: bottom;
+  transform: translateY(-50px);
+}
+#script .boxs .buttons {
+  box-sizing: border-box;
+  border: 1px solid white;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  position: absolute;
+  left: 5px;
+  transform: translateX(15px);
+  cursor: pointer;
+}
+#script .boxs .buttons:hover {
+  background-color: #cccccc;
+  color: black;
+  transition: 0.5s ease-in-out;
+}
+
+#backbutton .sidebutton {
+  width: 100%;
+  font-size: 30px;
+  box-sizing: border-box;
+}
+#backbutton .sidebutton ul {
+  list-style: none;
+  position: fixed;
+  top: 55%;
+  left: 88%;
+  color: #ffffff;
+}
+#backbutton .sidebutton ul li {
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+#backbutton .sidebutton ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+#copyright div {
+  width: 100%;
+  position: fixed;
+  top: 95%;
+}
+#copyright div i {
+  z-index: 2;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+  #header-area {
+    height: 800px;
+    position: relative;
+  }
+  #header-area .heardertext-area {
+    position: absolute;
+    top: 80%;
+  }
+  #header-area .heardertext-area p {
+    width: 30%;
+  }
+  #header-area .icon {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+  }
+  #header-area .icon a {
+    text-decoration: none;
+    color: #b3b3b3;
+  }
+  #header-area .icon a p {
+    font-size: 15px;
+    padding-left: 10%;
+  }
+
+  #Graphic h5 {
+    padding: 70px 100px 40px 100px;
+    font-size: 50px;
+  }
+  #Graphic .graphic-container {
+    padding: 0px 100px 70px 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "item-A item-B item-C item-D";
+  }
+  #Graphic .graphic-container .card, #Graphic .graphic-container .item-A, #Graphic .graphic-container .item-B, #Graphic .graphic-container .item-C, #Graphic .graphic-container .item-D, #Graphic .graphic-container .item-E, #Graphic .graphic-container .item-F {
+    height: 400px;
+    position: relative;
+  }
+  #Graphic .graphic-container .card p, #Graphic .graphic-container .item-A p, #Graphic .graphic-container .item-B p, #Graphic .graphic-container .item-C p, #Graphic .graphic-container .item-D p, #Graphic .graphic-container .item-E p, #Graphic .graphic-container .item-F p {
+    display: none;
+  }
+  #Graphic .graphic-container .card img, #Graphic .graphic-container .item-A img, #Graphic .graphic-container .item-B img, #Graphic .graphic-container .item-C img, #Graphic .graphic-container .item-D img, #Graphic .graphic-container .item-E img, #Graphic .graphic-container .item-F img {
+    width: 100%;
+    height: 70%;
+  }
+  #Graphic .graphic-container .card h4, #Graphic .graphic-container .item-A h4, #Graphic .graphic-container .item-B h4, #Graphic .graphic-container .item-C h4, #Graphic .graphic-container .item-D h4, #Graphic .graphic-container .item-E h4, #Graphic .graphic-container .item-F h4 {
+    text-align: center;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    transform: translateY(270px);
+  }
+  #Graphic .graphic-container .card #Co-button, #Graphic .graphic-container .item-A #Co-button, #Graphic .graphic-container .item-B #Co-button, #Graphic .graphic-container .item-C #Co-button, #Graphic .graphic-container .item-D #Co-button, #Graphic .graphic-container .item-E #Co-button, #Graphic .graphic-container .item-F #Co-button {
+    width: 80px;
+    height: 30px;
+    padding: 5px;
+    position: relative;
+    top: 70px;
+    transform: translateX(-85px);
+    background-color: rgba(100, 100, 100, 0.8);
+  }
+  #Graphic .graphic-container .item-A h3 {
+    transform: translateY(30px);
+  }
+
+  #animation h5 {
+    padding: 70px 100px 40px 100px;
+    font-size: 50px;
+  }
+  #animation .box-1, #animation .box-2 {
+    padding: 0px 100px 30px 100px;
+  }
+  #animation .box-1 iframe, #animation .box-2 iframe {
+    height: 500px;
+  }
+
+  #phto {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "item-1 item-2" "item-3 item-4";
+  }
+  #phto h5 {
+    padding: 70px 100px 40px 0px;
+    font-size: 50px;
+  }
+  #phto .card, #phto #Graphic .graphic-container .item-A, #Graphic .graphic-container #phto .item-A, #phto #Graphic .graphic-container .item-B, #Graphic .graphic-container #phto .item-B, #phto #Graphic .graphic-container .item-C, #Graphic .graphic-container #phto .item-C, #phto #Graphic .graphic-container .item-D, #Graphic .graphic-container #phto .item-D, #phto #Graphic .graphic-container .item-E, #Graphic .graphic-container #phto .item-E, #phto #Graphic .graphic-container .item-F, #Graphic .graphic-container #phto .item-F {
+    transform: translateY(200px);
+  }
+  #phto .item-1 {
+    height: 400px;
+  }
+  #phto .item-2 {
+    height: 400px;
+    transform: translateY(-220px);
+  }
+  #phto .item-3 {
+    display: block;
+    background-image: url(/Images/DP03.JPG);
+    background-size: cover;
+    height: 400px;
+  }
+  #phto .item-4 {
+    display: block;
+    background-image: url(/Images/DP04.JPG);
+    background-size: cover;
+    height: 400px;
+    transform: translateY(-220px);
+  }
+
+  #script {
+    transform: translateY(900px);
+  }
+  #script h5 {
+    padding: 70px 100px 40px 0px;
+    font-size: 50px;
+  }
+  #script .boxs {
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #script .boxs h4 {
+    padding: 50px 50px 10px 50px;
+    font-size: 40px;
+  }
+  #script .boxs p {
+    padding: 0px 50px 50px 50px;
+    width: 30%;
+  }
+  #script .boxs .buttons {
+    box-sizing: border-box;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+    left: 50px;
+    transform: translateY(-30px);
+    cursor: pointer;
+  }
+  #script .boxs .buttons:hover {
+    background-color: #cccccc;
+    color: black;
+    transition: 0.5s ease-in-out;
+  }
+
+  #backbutton .sidebutton {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #backbutton .sidebutton ul {
+    width: 5%;
+    padding-left: 5%;
+  }
+}
+@media only screen and (min-width: 500px) {
+  header nav {
+    height: 100px;
+  }
+  header nav .logo-area a img {
+    width: 60px;
+    height: 50px;
+    padding: 25px 0px 25px 0px;
+    left: 20px;
+  }
+  header nav .logo-area a h1 {
+    font-size: 30px;
+    padding: 35px 0px 35px 90px;
+    display: block;
+  }
+  header nav #day, header nav #night {
+    padding: 35px 0px 35px 0px;
+    font-size: 30px;
+    right: 150px;
+  }
+  header nav #night {
+    right: 100px;
+  }
+  header nav #bar-btn, header nav #close-btn {
+    padding: 30px;
+  }
+  header nav #menu-container.active {
+    transform: translateY(0px);
+  }
+
+  #header-area .heardertext-area {
+    transform: translateY(-400px);
+  }
+
+  #timeline-area {
+    width: 100%;
+  }
+  #timeline-area .bg {
+    box-sizing: border-box;
+    width: 100%;
+    height: 250px;
+    margin: 0;
+  }
+  #timeline-area .bg h4 {
+    width: 80%;
+    box-sizing: border-box;
+    top: 50%;
+  }
+  #timeline-area .box .inner {
+    width: 100%;
+    height: 200px;
+  }
+
+  #backbutton .sidebutton ul {
+    top: 58%;
+    left: 90%;
+  }
+}
